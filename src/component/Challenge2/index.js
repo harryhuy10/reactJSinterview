@@ -26,7 +26,7 @@ class Challenge2 extends React.Component {
         if(temp>0){
             for(let i = this.state.fromNumber; i<= this.state.toNumber;i++){
                 
-                if (this.kiem_tra_snt(i)==1){
+                if (this.checkSum(i)==1){
                     array.push(i)
                 }
             }
@@ -53,7 +53,19 @@ class Challenge2 extends React.Component {
         }
         else return (<div><p>Mời bạn nhập</p></div>)
     }
-    kiem_tra_snt(n) {
+    checkSum(n){
+        n = n.toString();
+        let arraySplit = n.split('').map(Number);
+        let arraySquare = arraySplit.map(x => x**2);
+        let sum = arraySplit.reduce(function(a,b) { return a + b; });
+        let sumSquare = arraySquare.reduce(function(a,b) { return a + b; })
+        if(this.checkSnt(sum)==1&&this.checkSnt(sumSquare)==1){
+            return 1
+        }
+        else return 0
+
+    }
+    checkSnt(n) {
         var flag = true;
         if (n < 2) {
             flag = false;

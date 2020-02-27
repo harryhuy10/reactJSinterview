@@ -13,8 +13,7 @@ var params = {
 }
 class Challenge1 extends React.Component {
     constructor(props) {
-        super(props)
-
+        super(props);
         this.state = {
             searchName: '',
             data:{
@@ -22,12 +21,14 @@ class Challenge1 extends React.Component {
                     weather_icons:[],
                     weather_descriptions:[]
                 }
-
             }
         }
-
     }
-    getData = () => {
+    
+    handleChange(event, _type) {
+        this.setState({
+            searchName: event.target.value
+        })
         params.query = this.state.searchName;
         axios.get('http://api.weatherstack.com/current', { params })
             .then(response => {
@@ -39,11 +40,7 @@ class Challenge1 extends React.Component {
             }).catch(error => {
                 console.log(error);
             });
-    }
-    _onChange(event, _type) {
-        this.setState({
-            searchName: event.target.value
-        })
+        
     }
     renderCity() {
         if(this.state.data.location)
@@ -77,10 +74,10 @@ class Challenge1 extends React.Component {
                         aria-label="Username"
                         aria-describedby="basic-addon1"
                         value={this.state.searchName}
-                        onChange={(event) => this._onChange(event, 'searchName')}
+                        onChange={(event) => this.handleChange(event, 'searchName')}
                     />
                 </InputGroup>
-                <Button variant="primary" onClick={this.getData.bind()}>Tìm kiếm</Button>
+               
             </div>
             <div className="">{this.renderCity()}</div>
         </div>)
