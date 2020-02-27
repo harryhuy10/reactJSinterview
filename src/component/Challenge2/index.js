@@ -1,8 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
-import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import ListGroup from 'react-bootstrap/ListGroup';
 class Challenge2 extends React.Component {
     constructor(props) {
         super(props)
@@ -45,7 +46,9 @@ class Challenge2 extends React.Component {
     renderResult() {
         if (this.state.index == 1){
         return (<div className="container">
-            {this.state.data.map((item,index) =><p key={index}>{item}</p>)}
+            <ListGroup>
+            {this.state.data.map((item,index) =><ListGroup.Item>{item}</ListGroup.Item>)}
+            </ListGroup>
         </div>)
         }
         else return (<div><p>Mời bạn nhập</p></div>)
