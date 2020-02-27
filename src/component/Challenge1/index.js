@@ -31,9 +31,6 @@ class Challenge1 extends React.Component {
         params.query = this.state.searchName;
         axios.get('http://api.weatherstack.com/current', { params })
             .then(response => {
-                const apiResponse = response.data;
-                console.log(response.data);
-                console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
                 this.setState({
                     ...this.state,
                     data:response.data
