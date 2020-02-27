@@ -21,8 +21,8 @@ class Challenge2 extends React.Component {
     }
     getData() {
         let array = [];
-        if(this.state.fromNumber < this.state.toNumber){
-            for(let i = this.state.fromNumber; i< this.state.toNumber;i++){
+        if(this.state.fromNumber <= this.state.toNumber){
+            for(let i = this.state.fromNumber; i<= this.state.toNumber;i++){
               
                 if (this.kiem_tra_snt(i)==1){
                     array.push(i)
