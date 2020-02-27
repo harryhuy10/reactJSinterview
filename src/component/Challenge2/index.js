@@ -9,7 +9,7 @@ class Challenge2 extends React.Component {
 
         this.state = {
             fromNumber: 0,
-            toNumber: 0,
+            toNumber: 2,
             data:[],
             index:0
         
@@ -17,13 +17,14 @@ class Challenge2 extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(evt) {
-        this.setState({ [evt.target.name]: evt.target.value });
+        this.setState({ [evt.target.name]: parseInt(evt.target.value) });
     }
     getData() {
         let array = [];
-        if(this.state.fromNumber <= this.state.toNumber){
+        let temp = this.state.toNumber-this.state.fromNumber;
+        if(temp>0){
             for(let i = this.state.fromNumber; i<= this.state.toNumber;i++){
-              
+                
                 if (this.kiem_tra_snt(i)==1){
                     array.push(i)
                 }
@@ -76,7 +77,6 @@ class Challenge2 extends React.Component {
                 <div>
                     <p>Khoảng bạn chọn:</p>
                     <InputGroup className="mb-3">
-
 
                         <FormControl
                             placeholder="Từ"
