@@ -46,9 +46,7 @@ class Challenge2 extends React.Component {
     }
     renderResult() {
         if (this.state.index == 1){
-        return (<div className="container">
-            <br />
-            <br />
+        return (<div className="container result">
             <ListGroup>
             {this.state.data.map((item,index) =><ListGroup.Item>{item}</ListGroup.Item>)}
             </ListGroup>
