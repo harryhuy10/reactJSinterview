@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import './index.css';
@@ -63,7 +62,8 @@ class Challenge1 extends React.Component {
     render() {
         return (<div className="container">
             <div className="challenge1">
-                <p><b>Challenge 1:</b> </p>
+                <h1>Challenge 1:</h1>
+                <br />
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text id="basic-addon1">Nhập tên thành phố: </InputGroup.Text>

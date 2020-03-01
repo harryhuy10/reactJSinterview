@@ -1,13 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Challenge1 from './component/Challenge1';
-import Challenge2 from './component/Challenge2';
+import Main from './component/Main';
 function App() {
   return (
     <div className="App">
-      <Challenge1 / >
-      <Challenge2 / >
+      <Main />
     </div>
   );
 }

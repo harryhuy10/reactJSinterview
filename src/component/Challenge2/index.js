@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import ListGroup from 'react-bootstrap/ListGroup';
+import './index.css';
 class Challenge2 extends React.Component {
     constructor(props) {
         super(props)
@@ -46,12 +47,14 @@ class Challenge2 extends React.Component {
     renderResult() {
         if (this.state.index == 1){
         return (<div className="container">
+            <br />
+            <br />
             <ListGroup>
             {this.state.data.map((item,index) =><ListGroup.Item>{item}</ListGroup.Item>)}
             </ListGroup>
         </div>)
         }
-        else return (<div><p>Mời bạn nhập</p></div>)
+        else return (<div><br/><br /><p>Mời bạn nhập</p></div>)
     }
     checkSum(n){
         n = n.toString();
@@ -88,7 +91,8 @@ class Challenge2 extends React.Component {
     render() {
         return (<div className="container">
             <div className="challenge2">
-                <p><b>Challenge 2: </b></p>
+                <h1>Challenge 2: </h1>
+                <br />
                 <div>
                     <p>Khoảng bạn chọn:</p>
                     <InputGroup className="mb-3">
