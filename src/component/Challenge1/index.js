@@ -23,7 +23,8 @@ class Challenge1 extends React.Component {
             }
         }
     }
-    
+   
+    //live search
     handleChange(event, _type) {
         this.setState({
             searchName: event.target.value
